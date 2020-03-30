@@ -14,6 +14,7 @@ namespace JMDMBikeGameUDPInterface
 {
     public class JMDMBikeGameUDPInterface : IDisposable
     {
+
         /// <summary>
         /// A event delegate to handle the event
         /// </summary>
@@ -31,16 +32,13 @@ namespace JMDMBikeGameUDPInterface
         /// </summary>
         public event DataReceiveEventHandler DataReceiveEvent
         {
-            add
-            {
-                UDPGameConnections.DataReceiveEvent += value;
-            }
-            remove
-            {
-                UDPGameConnections.DataReceiveEvent += value;
-            }
+            add => UDPGameConnections.DataReceiveEvent += value;
+            remove => UDPGameConnections.DataReceiveEvent += value;
         }
 
+        /// <summary>
+        /// the Port that the game will send info to this.
+        /// </summary>
         public int? ReceiveFromGamesInputPort
         {
             get
