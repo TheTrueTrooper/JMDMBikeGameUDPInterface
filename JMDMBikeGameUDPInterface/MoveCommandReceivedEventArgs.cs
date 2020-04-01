@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JMDMBikeGameUDPInterface
+namespace JMDMBikeGameUDPInterfaceNS
 {
     /// <summary>
     /// An event argument to handle the Data received

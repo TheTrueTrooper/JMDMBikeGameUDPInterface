@@ -1,0 +1,5 @@
+C:\Users\The_Beast\Documents\GitHub\JMDMBikeGameUDPInterface\JMDMGameUDPInterface\bin\Debug\JMDMGameUDPInterface.dll
+C:\Users\The_Beast\Documents\GitHub\JMDMBikeGameUDPInterface\JMDMGameUDPInterface\bin\Debug\JMDMGameUDPInterface.pdb
+C:\Users\The_Beast\Documents\GitHub\JMDMBikeGameUDPInterface\JMDMGameUDPInterface\obj\Debug\JMDMGameUDPInterface.csprojAssemblyReference.cache
+C:\Users\The_Beast\Documents\GitHub\JMDMBikeGameUDPInterface\JMDMGameUDPInterface\obj\Debug\JMDMGameUDPInterface.dll
+C:\Users\The_Beast\Documents\GitHub\JMDMBikeGameUDPInterface\JMDMGameUDPInterface\obj\Debug\JMDMGameUDPInterface.pdb

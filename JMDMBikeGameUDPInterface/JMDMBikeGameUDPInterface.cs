@@ -10,7 +10,7 @@ using System.Threading;
 using JMDMGameUDPInterface;
 using static JMDMGameUDPInterface.GameUDPInterface;
 
-namespace JMDMBikeGameUDPInterface
+namespace JMDMBikeGameUDPInterfaceNS
 {
     public class JMDMBikeGameUDPInterface : IDisposable
     {
