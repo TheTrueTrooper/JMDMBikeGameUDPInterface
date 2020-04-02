@@ -82,17 +82,26 @@ namespace JMDMBikeGameUDPInterfaceNS
             DataReceiveEvent += SelfhandleDataReceiveEvent;
         }
 
+        public void StartListenLoop()
+        {
+            UDPGameConnections.StartListenLoop();
+        }
+
         private void SelfhandleDataReceiveEvent(object Sender, DataReceiveEventArgs e)
         {
-            const string MoveOrderConst = "O1(";
+            const string MoveOrderConst = "O2(";
             string Message = ASCIIEncoding.ASCII.GetString(e.Data);
 
             if(Message.Contains(MoveOrderConst))
             {
-                string MoveOrder = Message.Substring(Message.IndexOf("O1("), 7);
-                MoveCommandReceivedEvent.Invoke(this, new MoveCommandReceivedEventArgs(byte.Parse(MoveOrder.Substring(3, 3))));
+                string MoveOrder = Message.Substring(Message.IndexOf(MoveOrderConst), 7);
+                Console.WriteLine(MoveOrder);
+                Console.ReadKey();
+                MoveCommandReceivedEvent.Invoke(this, new MoveCommandReceivedEventArgs(byte.Parse(MoveOrder.Substring(0,3))));
             }
         }
+        
+
 
         void SendRawPacket(ref byte[] Data)
         {
@@ -103,7 +112,7 @@ namespace JMDMBikeGameUDPInterfaceNS
         /// 
         /// </summary>
         /// <param name="Angel">S1 (XXXX) The degree of deviation of the bicycle head. S1 (2500) is the center position, and the range is S1 (0000)-S1 (5000)</param>
-        public void SendAngel(short Angel)
+        public void SendAngle(short Angel)
         {
             const string Message = "S1({0:0000})";
             byte[] Data = ASCIIEncoding.ASCII.GetBytes(string.Format(Message, Angel));

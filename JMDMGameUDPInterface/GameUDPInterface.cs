@@ -71,7 +71,7 @@ namespace JMDMGameUDPInterface
         {
             //Create a end point to send data to a the game and bind it
             GameIPEndPoint = new IPEndPoint(IPAddress.Parse(SendToGamesInputPortInputPortIP), SendToGamesInputPort);
-            SendMessageToGameClient = new UdpClient(GameIPEndPoint);
+            SendMessageToGameClient = new UdpClient();
 
             //Create a end point to recieve data from the game and bind it.
             ThisIPEndPoint = new IPEndPoint(IPAddress.Parse(ReceiveFromGamesInputPortIP), ReceiveFromGamesInputPort);
@@ -80,7 +80,13 @@ namespace JMDMGameUDPInterface
 
         public void SendRawPacket(byte[] Data)
         {
-            SendMessageToGameClient.Send(Data, Data.Length);
+            SendMessageToGameClient.Send(Data, Data.Length, GameIPEndPoint);
+        }
+
+        public void StartListenLoop()
+        {
+            ListeningThread = new Thread(new ThreadStart(ListenForDataLoop));
+            ListeningThread.Start();
         }
 
         void ListenForDataLoop()
